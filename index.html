@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Grid Guide</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  bookmarklet:
+  <br/>
+  <a href="javascript: (function () { var jsCode = document.createElement('script'); jsCode.setAttribute('src', 'http://localhost:8080/dev/gridguide/main.js'); document.body.appendChild(jsCode); }());">GG</a>
+  <br/>
+  <br/>
+  <br/>
+  <div id="settings" style="z-index:9999; position:absolute;">
+    <form id="grid_guide_settings">
+      <div class="container">
+        <div class="row">
+          <label>Container Width:</label>
+          <input></input>
+        </div>
+        <div class="row">
+          <label>Alignment:</label>
+          <a>L</a>
+          <a>M</a>
+          <a>R</a>
+        </div>
+      </div>
+      <div class="margins">
+        <h3>margins</h3>
+        <input></input>
+        <input></input>
+        <input></input>
+        <input></input>
+      </div>
+      <div class="rows" style="display:inline-block;">
+        <h3>rows</h3>
+        <div>
+          <input name="r_count" type="text"></input>
+          <input name="r_width" type="text"></input>
+          <input name="r_gutter" type="text"></input>
+        </div>
+        <a>+</a>
+      </div>
+      <div class="columns" style="display:inline-block;">
+        <h3>columns</h3>
+        <div>
+          <input name="c_count" type="text"></input>
+          <input name="c_width" type="text"></input>
+          <input name="c_gutter" type="text"></input>
+        </div>
+        <a>+</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
