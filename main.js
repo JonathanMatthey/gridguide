@@ -1,9 +1,9 @@
 
 
-  (function(){
+(function(){
 
   // the minimum version of jQuery we want
-  var v = "1.3.2";
+  var v = "1.9.1";
 
   // check prior inclusion and version
   if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
@@ -20,6 +20,15 @@
   } else {
     initMyBookmarklet();
   }
+
+  // html row template
+  var rowHtml = '<div class="row">'+
+  '<label>&nbsp;</label>'+
+  '<input class="count" name="count" type="text" value="10"></input>'+
+  '<input class="width" name="width" type="text" value="10"></input>'+
+  '<input class="gutter" name="gutter" type="text" value="0"></input>'+
+  ''+
+  '</div>';
 
   function initMyBookmarklet() {
     (window.myBookmarklet = function() {
@@ -41,6 +50,13 @@
         'hori':[["5","20px"],["5","100px"],["10","10px"]],
         'vert':[["20","100px"]]
       }
+
+      $(".plus").click(function(event){
+        event.preventDefault();
+        $rowHtml = $(rowHtml);
+        $(this).parent().parent().append($rowHtml);
+        $(this).appendTo($rowHtml);
+      });
 
       drawGridGuides(gridSettings);
 
