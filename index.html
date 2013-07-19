@@ -16,44 +16,177 @@
   <br/>
   <br/>
   <br/>
-  <div id="settings" style="z-index:9999; position:absolute;">
-    <form id="grid_guide_settings">
+  <style>
+    body{
+      font-size:14px;
+    }
+    #settings{
+      z-index:9999;
+      position:absolute;
+      background-color:#000;
+      color:white;
+      font-style:italic;
+      width:100%;
+      top:0;
+      left:0;
+    }
+    #form_settings{
+      float:left;
+      top:0;
+      left:0;
+      width:100%;
+    }
+    #form_settings{
+      padding:20px;
+    }
+    #form_settings > div{
+      float:left;
+      margin-right:40px;
+    }
+    input{
+      background-color:#292929;
+      border:none;
+      border-radius:2px;
+      height:35px;
+      width:45px;
+      color:white;
+      padding:0;
+      padding-left:40px;
+      margin:0;
+      margin-right:3px;
+      background-image:url(images/grid_guide_sprite.png);
+      background-position: -183px 8px;
+      background-repeat: no-repeat;
+      transition: background-color 100ms linear;
+    }
+    input:hover{
+      background-color:#343434;
+    }
+    input.container-width{
+      background-image:none;
+      width:62px;
+      padding-left:10px;
+    }
+    .container label{
+      width:120px;
+    }
+    .margins .top{
+      background-position: -183px 8px;
+    }
+    .margins .bottom{
+      background-position: -273px 8px;
+    }
+    .margins .left{
+      background-position: -183px -32px;
+    }
+    .margins .right{
+      background-position: -273px -32px;
+    }
+    label{
+      width:80px;
+      display: block;
+      float:left;
+      height:35px;
+      line-height: 35px;
+    }
+    .btn-align{
+      width:18px;
+      height:18px;
+      border:1px solid #333;
+      display: inline-block;
+      display: block;
+      float:left;
+      margin-top:5px;
+      margin-right:5px;
+    }
+    .btn-align:last-child{
+      margin-right:0px;
+    }
+    .row{
+      margin-bottom:5px;
+    }
+    .plus{
+      font-size:24px;
+      font-family: sans-serif;
+      font-style: normal;
+      margin-left:10px;
+      transition: background-color 100ms linear;
+      height:32px;
+      width:32px;
+      border-top:2px solid black;
+      display:inline-block;
+      text-align: center;
+      line-height: 30px;
+    }
+    .plus:hover{
+      background-color:#292929;
+    }
+
+    .rows .count{
+      background-position: -479px 8px;
+    }
+    .rows .width{
+      background-position: -569px 8px;
+    }
+    .rows .gutter{
+      background-position: -659px 8px;
+    }
+    .columns .count{
+      background-position: -479px -32px;
+    }
+    .columns .width{
+      background-position: -569px -32px;
+    }
+    .columns .gutter{
+      background-position: -659px -32px;
+    }
+
+  </style>
+  <div id="settings">
+    <form id="form_settings">
       <div class="container">
         <div class="row">
           <label>Container Width:</label>
-          <input></input>
+          <input class="container-width" value="960px"></input>
         </div>
         <div class="row">
           <label>Alignment:</label>
-          <a>L</a>
-          <a>M</a>
-          <a>R</a>
+          <a class="btn-align left"></a>
+          <a class="btn-align center"></a>
+          <a class="btn-align right"></a>
         </div>
       </div>
       <div class="margins">
-        <h3>margins</h3>
-        <input></input>
-        <input></input>
-        <input></input>
-        <input></input>
-      </div>
-      <div class="rows" style="display:inline-block;">
-        <h3>rows</h3>
-        <div>
-          <input name="r_count" type="text"></input>
-          <input name="r_width" type="text"></input>
-          <input name="r_gutter" type="text"></input>
+        <div class="row">
+          <label>Margins:</label>
+          <input class="top" name="top" value="20"></input>
+          <input class="bottom" name="bottom" value="20"></input>
         </div>
-        <a>+</a>
-      </div>
-      <div class="columns" style="display:inline-block;">
-        <h3>columns</h3>
-        <div>
-          <input name="c_count" type="text"></input>
-          <input name="c_width" type="text"></input>
-          <input name="c_gutter" type="text"></input>
+        <div class="row">
+          <label>&nbsp</label>
+          <input class="left" name="left" value="10"></input>
+          <input class="right" name="right" value="10"></input>
         </div>
-        <a>+</a>
+      </div>
+      <div class="rows-columns" style="display:inline-block;">
+        <div class="rows">
+          <div class="row">
+            <label>Rows:</label>
+            <input class="count" name="count" type="text" value="10"></input>
+            <input class="width" name="width" type="text" value="10"></input>
+            <input class="gutter" name="gutter" type="text" value="0"></input>
+            <a class="plus">+</a>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="row">
+            <label>Columns:</label>
+            <input class="count" name="count" type="text" value="20"></input>
+            <input class="width" name="width" type="text" value="100"></input>
+            <input class="gutter" name="gutter" type="text" value="100"></input>
+            <a class="plus">+</a>
+          </div>
+        </div>
       </div>
     </form>
   </div>
