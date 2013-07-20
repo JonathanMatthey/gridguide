@@ -8,54 +8,61 @@
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style>
+  body{
+    text-align: center;
+    padding:50px;
+    font-family: helvetica, sans-serif;
+  }
+  h1{
+    font-size:200px;
+    padding: 100px;
+    margin:0;
+    color:#ddd;
+  }
+  #bookmarklet{
+    background-color:#333;
+    color:white;
+    text-align: center;
+    display: inline-block;
+    line-height: 50px;
+    text-decoration: none;
+    font-weight: normal;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.33);
+    font-size: 18px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 0 18px;
+    background: -moz-linear-gradient(top, #444 0%, #222 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444), color-stop(100%, #222));
+    background: -webkit-linear-gradient(top, #444 0%, #222 100%);
+    background: -o-linear-gradient(top, #444 0%, #222 100%);
+    background: -ms-linear-gradient(top, #444 0%, #222 100%);
+    background: linear-gradient(to bottom, #444 0%, #222 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#222',GradientType=0 );
+    color: #fff;
+    margin: 10px;
+
+  }
+  .drag-text{
+    display: inline-block;
+    font-size:22px;
+  }
+  </style>
 </head>
 <body>
-  bookmarklet:
+  <a id="bookmarklet" href="javascript: (function () { var jsCode = document.createElement('script'); jsCode.setAttribute('src', 'http://localhost:7070/dev/gridguide/main.js'); document.body.appendChild(jsCode); }());">GridGuide</a>
+  <div class="drag-text"> ← Drag this button to your bookmarklets toolbar</div>
+  <h1>Grid Guide</h1>
   <br/>
-  <a href="javascript: (function () { var jsCode = document.createElement('script'); jsCode.setAttribute('src', 'http://localhost:7070/dev/gridguide/main.js'); document.body.appendChild(jsCode); }());">GG</a>
   <br/>
   <br/>
-  <br/>
-  <div id="settings" style="z-index:9999; position:absolute; font-style: italic; ">
-    <form id="grid_guide_settings">
-      <div class="container">
-        <div class="row">
-          <label>Container Width:</label>
-          <input></input>
-        </div>
-        <div class="row">
-          <label>Alignment:</label>
-          <a>L</a>
-          <a>M</a>
-          <a>R</a>
-        </div>
-      </div>
-      <div class="margins">
-        <h3>margins</h3>
-        <input name='top' class='top' value="20" style="font-style:italic"></input>
-        <input name='bottom' class='bottom' value="20" style="font-style:italic"></input>
-        <input name='left' class='left' value="20" style="font-style:italic"></input>
-        <input name='right' class='right' value="20" style="font-style:italic"></input>
-      </div>
-      <div class="rows" style="display:inline-block;">
-        <h3>rows</h3>
-        <div class='row'>
-          <input name="count" class="count" type="text" value="10" style="font-style:italic"></input>
-          <input name="width" class="width" type="text" value="20" style="font-style:italic"></input>
-          <input name="gutter" class="gutter" type="text" value="10" style="font-style:italic"></input>
-        </div>
-        <a>+</a>
-      </div>
-      <div class="columns" style="display:inline-block;">
-        <h3>columns</h3>
-        <div class='row'>
-          <input name="count" class="count" type="text" value="20" style="font-style:italic"></input>
-          <input name="width" class="width" type="text" value="100" style="font-style:italic"></input>
-          <input name="gutter" class="gutter" type="text" value="0" style="font-style:italic"></input>
-        </div>
-        <a>+</a>
-      </div>
-    </form>
-  </div>
+
 </body>
 </html>
